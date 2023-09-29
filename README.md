@@ -1,25 +1,11 @@
 # RobotsEmployeeDirectory
 
-This Python program defines a class `robot` to represent robots with various characteristics. 
-This program is a simple demonstration of object-oriented programming in Python.
+This Python program defines a Robot class that represents robots with attributes such as name, color, brand, and weight. 
+It showcases fundamental principles of object-oriented programming in Python, allowing for the creation of robot instances.
+Also keeps track of the total number of robot instances created and provides a method to print their individual characteristics.
 
-## Robot Class
+## Features
 
-The `robot` class has the following attributes:
-
-- `name`: The name of the robot.
-- `color`: The color of the robot.
-- `brand`: The brand or manufacturer of the robot.
-- `weight`: The weight of the robot.
-
-## Example
-
-```python
-# Create robot instances
-r1 = robot('romina', 'black', 'lefant', '500')
-r2 = robot('alexa', 'gray', 'amazon', '100')
-
-# Print robot characteristics
-r1.introduce_self()
-r2.introduce_self()
-
+- Create robot instances with different characteristics.
+- Track the total number of robots created.
+- Print robot characteristics using the `introduce_self()` method.
