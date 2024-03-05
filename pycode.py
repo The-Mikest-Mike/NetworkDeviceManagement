@@ -1,20 +1,21 @@
-# class
-class Robot: 
-    number_of_robots = 0
-
+# class to represent network devices
+class Device: 
+    # class variable to keep track of the number of devices
+    number_of_devices = 0
+    # method to initialize a device with its attributes
     def __init__(self, name, color, brand, weight, swversion, ipaddress):
-        self.name = name
-        self.color = color
-        self.brand = brand
-        self.weight = float(weight)
-        self.swversion = (swversion)
-        self.ipaddress = (ipaddress)
+        self.name = name # name of device
+        self.color = color # color of device
+        self.brand = brand # brand of device
+        self.weight = float(weight) # weight of device in kilograms
+        self.swversion = (swversion) # software version of device
+        self.ipaddress = (ipaddress) # ip address of device
 
-        Robot.number_of_robots += 1
+        Device.number_of_devices += 1 # increment the number of devices
 
-    # print information about their characteristics
+    # method to return a description of the devices
     def introduce_self(self):
-        '''return a description of the device/robot'''
+        '''Return a description of the device'''
         introduce = f'Name: {self.name}\n'\
                     f'Color: {self.color}\n'\
                     f'Brand: {self.brand}\n'\
@@ -23,15 +24,16 @@ class Robot:
                     f'IPAdress: {self.ipaddress}'
         return introduce
         
-# add robots/devices with their characteristics
-r1 = Robot('Romina', 'Black', 'Lefant', .500, '4.7.1', '192.168.1.2')
-r2 = Robot('Alexa', 'Gray', 'Amazon', .100, '4.7.1', '192.168.1.3')
+# instantiate devices with their characteristics
+d1 = Device('Romina', 'Black', 'Lefant', .500, '4.7.1', '192.168.1.2')
+d2 = Device('Alexa', 'Gray', 'Amazon', .100, '4.7.1', '192.168.1.3')
 
-# print number of robots/devices. It will be updated as they being added
-print(f"the current number of robots is: {Robot.number_of_robots}")
-   
-print('r1\n', r1.introduce_self(), '\n')
-print('r2\n', r2.introduce_self(), '\n')
+# print current number of devices. It will be updated as they are being added
+print(f"the current number of devices is: {Device.number_of_devices}")
+
+# print information about the devices
+print('d1\n', d1.introduce_self(), '\n')
+print('d2\n', d2.introduce_self(), '\n')
 
 
 
