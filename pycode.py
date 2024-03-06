@@ -6,8 +6,9 @@ class Device:
     number_of_devices = 0
     
     # Method to initialize a device with its attributes
-    def __init__(self, name, color, brand, weight, swversion, ipaddress):
+    def __init__(self, name, model, color, brand, weight, swversion, ipaddress):
         self.name = name  # Name of device
+        self.model = model # Model of device
         self.color = color  # Color of device
         self.brand = brand  # Brand of device
         self.weight = float(weight)  # Weight of device in kilograms
@@ -20,6 +21,7 @@ class Device:
     def introduce_self(self):
         '''Returns a description of the device'''
         introduce = f'Name: {self.name}\n'\
+                    f'Model: {self.model}\n'\
                     f'Color: {self.color}\n'\
                     f'Brand: {self.brand}\n'\
                     f'Weight: {self.weight} kg\n'\
@@ -41,7 +43,7 @@ def read_devices_from_json(filename):
         data = json.load(file)  # Load the JSON data from the file
         for device_data in data:  # Iterate over each device's data in the JSON data
             # Create a Device object using the device's data and append it to the devices list
-            device = Device(device_data['name'], device_data['color'], device_data['brand'], 
+            device = Device(device_data['name'],device_data['model'], device_data['color'], device_data['brand'], 
                             device_data['weight'], device_data['swversion'], device_data['ipaddress'])
             devices.append(device)  # Append the created Device object to the list
     return devices  # Return the list of Device objects containing device characteristics
